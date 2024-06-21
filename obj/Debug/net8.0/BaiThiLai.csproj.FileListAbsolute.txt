@@ -275,3 +275,4 @@ C:\Users\nguye\OneDrive\Máy tính\NMD_BaiThiLai\BaiThiLai\obj\Debug\net8.0\refi
 C:\Users\nguye\OneDrive\Máy tính\NMD_BaiThiLai\BaiThiLai\obj\Debug\net8.0\BaiThiLai.pdb
 C:\Users\nguye\OneDrive\Máy tính\NMD_BaiThiLai\BaiThiLai\obj\Debug\net8.0\BaiThiLai.genruntimeconfig.cache
 C:\Users\nguye\OneDrive\Máy tính\NMD_BaiThiLai\BaiThiLai\obj\Debug\net8.0\ref\BaiThiLai.dll
+C:\Users\nguye\OneDrive\Máy tính\NMD_BaiThiLai\BaiThiLai\obj\Debug\net8.0\BaiThiLai.sourcelink.json
