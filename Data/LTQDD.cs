@@ -13,4 +13,6 @@ using BaiThiLai.Models;
         }
 
         public DbSet<BaiThiLai.Models.testktra> testktra { get; set; } = default!;
+
+public DbSet<BaiThiLai.Models.NMD190Person> NMD190Person { get; set; } = default!;
     }

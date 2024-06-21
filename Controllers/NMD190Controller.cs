@@ -9,22 +9,22 @@ using BaiThiLai.Models;
 
 namespace BaiThiLai.Controllers
 {
-    public class testktraController : Controller
+    public class NMD190Controller : Controller
     {
         private readonly LTQDD _context;
 
-        public testktraController(LTQDD context)
+        public NMD190Controller(LTQDD context)
         {
             _context = context;
         }
 
-        // GET: testktra
+       
         public async Task<IActionResult> Index()
         {
-            return View(await _context.testktra.ToListAsync());
+            return View(await _context.NMD190Person.ToListAsync());
         }
 
-        // GET: testktra/Details/5
+        
         public async Task<IActionResult> Details(string id)
         {
             if (id == null)
@@ -32,39 +32,37 @@ namespace BaiThiLai.Controllers
                 return NotFound();
             }
 
-            var testktra = await _context.testktra
-                .FirstOrDefaultAsync(m => m.Ten == id);
-            if (testktra == null)
+            var nMD190Person = await _context.NMD190Person
+                .FirstOrDefaultAsync(m => m.PersonID == id);
+            if (nMD190Person == null)
             {
                 return NotFound();
             }
 
-            return View(testktra);
+            return View(nMD190Person);
         }
 
-        // GET: testktra/Create
+       
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: testktra/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+       
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Ten,Lop,SinhVien")] testktra testktra)
+        public async Task<IActionResult> Create([Bind("PersonID,Fullname,Address")] NMD190Person nMD190Person)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(testktra);
+                _context.Add(nMD190Person);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(testktra);
+            return View(nMD190Person);
         }
 
-        // GET: testktra/Edit/5
+
         public async Task<IActionResult> Edit(string id)
         {
             if (id == null)
@@ -72,22 +70,20 @@ namespace BaiThiLai.Controllers
                 return NotFound();
             }
 
-            var testktra = await _context.testktra.FindAsync(id);
-            if (testktra == null)
+            var nMD190Person = await _context.NMD190Person.FindAsync(id);
+            if (nMD190Person == null)
             {
                 return NotFound();
             }
-            return View(testktra);
+            return View(nMD190Person);
         }
 
-        // POST: testktra/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+       
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(string id, [Bind("Ten,Lop,SinhVien")] testktra testktra)
+        public async Task<IActionResult> Edit(string id, [Bind("PersonID,Fullname,Address")] NMD190Person nMD190Person)
         {
-            if (id != testktra.Ten)
+            if (id != nMD190Person.PersonID)
             {
                 return NotFound();
             }
@@ -96,12 +92,12 @@ namespace BaiThiLai.Controllers
             {
                 try
                 {
-                    _context.Update(testktra);
+                    _context.Update(nMD190Person);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!testktraExists(testktra.Ten))
+                    if (!NMD190PersonExists(nMD190Person.PersonID))
                     {
                         return NotFound();
                     }
@@ -112,10 +108,10 @@ namespace BaiThiLai.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(testktra);
+            return View(nMD190Person);
         }
 
-        // GET: testktra/Delete/5
+        // GET: NMD190/Delete/5
         public async Task<IActionResult> Delete(string id)
         {
             if (id == null)
@@ -123,34 +119,34 @@ namespace BaiThiLai.Controllers
                 return NotFound();
             }
 
-            var testktra = await _context.testktra
-                .FirstOrDefaultAsync(m => m.Ten == id);
-            if (testktra == null)
+            var nMD190Person = await _context.NMD190Person
+                .FirstOrDefaultAsync(m => m.PersonID == id);
+            if (nMD190Person == null)
             {
                 return NotFound();
             }
 
-            return View(testktra);
+            return View(nMD190Person);
         }
 
-      
+ 
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(string id)
         {
-            var testktra = await _context.testktra.FindAsync(id);
-            if (testktra != null)
+            var nMD190Person = await _context.NMD190Person.FindAsync(id);
+            if (nMD190Person != null)
             {
-                _context.testktra.Remove(testktra);
+                _context.NMD190Person.Remove(nMD190Person);
             }
 
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool testktraExists(string id)
+        private bool NMD190PersonExists(string id)
         {
-            return _context.testktra.Any(e => e.Ten == id);
+            return _context.NMD190Person.Any(e => e.PersonID == id);
         }
     }
 }
